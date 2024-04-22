@@ -61,39 +61,42 @@ The dataset consists of the following 11 classes: benign traffic is defined as n
 
 11. mirai.udpplain: This class represents plain UDP assaults that aim to overload IoT devices with UDP traffic, causing service disruption. It is similar to the prior "udp" attack by Mirai.
 
+The dataset consists of data collected from 9 IoT devices, however, for this paper, we have chosen to specially work on the dataset of DEVICE 7 - Samsung SNH 1011 N Webcam which has only classes 1 -6  
+
 
 <h2>How to run the program</h2>
 
-Inside the MEMS_4_Metrics or d7_4Metrics, you will find programs for each model used in this paper. Each one of these programs outputs: 
+Inside the MEMS_4_Metrics or d7_4_Metrics folder, you will find programs for each of the 5 models used in this paper. Each one of these programs outputs: 
 
 1. The accuracy for the AI model.
-2. The values for y_axis for the sparsity (that will need to be copied and pasted into the general_sparsity_graph.py).
-3. Top features in importance order (that will be needed to rerun these same programs to obtain new Accuracy values for Descriptive Accuracy. Take note of the values as you use less features and input these values in general_desc_acc_graph.py ).
-4. For Stability, run the programs 3x or more and input the obtained top k features in general_stability_comparison.py).
+2. The values for y_axis for the sparsity (that will need to be copied and pasted into the sparsity_gen_shap/lime.py).
+3. Top features in importance order (that will be needed to rerun these same programs to obtain new Accuracy values for Descriptive Accuracy. Take note of the values as you use less features and input these values in desc_acc_gen_shap/lime.py ).
+4. The number of samples being used.
    
 Descriptive Accuracy:
-To generate Descriptive Accuracy Graphs, see the code general_desc_acc_graph.py
+To generate Descriptive Accuracy Graphs, see the code desc_acc_gen_shap/lime.py in the respective folders.
 
 Sparsity:
-To generate Sparsity Graphs, see the code general_sparsity_graph.py
+To generate Sparsity Graphs, see the code sparsity_gen_shap/lime.py in the respective folders.
 
 Stability:
-To generate the Stability metrics, see the code general_stability_comparison.py
-
-Robustness:
-Inside the Robustness folder, firts run the code: threshold_CIC.py to generate a csv file. Then run analyze_threshold_CIC_LIME.py to generate the Robustness Sensitivity graph. and run the program RF_SHAP_CIC_bar.ipynb to generate the robustness bar graphs.
-
-Completeness:
-Inside the CICIDS or SIMARGL or NSLKDD folder run the code RF_LIME_COM_SML_CHART.ipynb or RF_SHAP_COM_SML_CHART.ipynb as an example.
+For Stability metrics, run the programs 3x or more and note the obtained top k features in each run and compare.
 
 Efficiency:
-Inside the CICIDS or SIMARGL or NSLKDD folder you will find programs for each model used in this paper. They output the time spent to generate the SHAP or LIME evaluation for k samples. We can just set up in the program the k value and take note of the time spent.
+From the output file, take note of the time spent.
+
+
+Robustness:
+Inside the Robustness folder, firts run the code: threshold_mems.py or threshold_d7.py to generate a csv file. Then run analyze_threshold_mems_LIME/SHAP.py or analyze_threshold_d7_LIME/SHAP.py to generate the Robustness Sensitivity graph.
+
+Completeness:
+Inside the Completeness folder, run the final_mems_d7_completeness_lime/shap.py for each label, to generate the completeness graph. 
+Note: According to the dataset being used, you will need to comment the code of the other dataset. They have been clearly marked by #mems or #d7
+
 
 <h2>Sample Evaluation Results</h2>
 
 <h4>Sample 1</h4>
-
-# ![W2 Mems](https://github.com/agummadi1/XAI_for_IoT_Systems/assets/154301345/536a8f0d-694e-4c52-8300-708821adba74)
 
 Sample explanation
 
