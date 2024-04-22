@@ -96,9 +96,12 @@ Note: According to the dataset being used, you will need to comment the code of 
 
 <h2>Sample Evaluation Results</h2>
 
-<h4>Sample 1</h4>
 
-Sample explanation
+<h4>Sample decriptive accuracy graph for MEMS SHAP</h4>
+
+![image](https://github.com/agummadi1/Evaluating_XAI_Techniques/assets/154301345/d6a044c5-4b2c-4692-90bb-d3b254914659)
+
+
 
 
 
